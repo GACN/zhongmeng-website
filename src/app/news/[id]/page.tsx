@@ -90,17 +90,15 @@ export default function NewsDetailPage() {
               prose-p:text-brown-light prose-p:leading-relaxed prose-p:my-4
               prose-strong:text-brown
               prose-a:text-brand hover:prose-a:text-brand-light
+              prose-img:rounded-xl prose-img:shadow-md
               [&_h2]:text-2xl [&_h2]:mt-10 [&_h2]:mb-4
               [&_h3]:text-xl [&_h3]:mt-8 [&_h3]:mb-3
               [&_p]:text-base md:[&_p]:text-lg
               [&_hr]:my-10 [&_hr]:border-gray-100
-            ">
-              {article.content.split("\n").map((line, i) => {
-                if (!line.trim()) return <br key={i} />;
-                if (/^——/.test(line.trim())) return <hr key={i} className="my-8 border-gray-200" />;
-                return <p key={i}>{line}</p>;
-              })}
-            </div>
+              [&_blockquote]:border-l-4 [&_blockquote]:border-gold [&_blockquote]:bg-amber-50 [&_blockquote]:p-4 [&_blockquote]:rounded-r-lg
+            "
+              dangerouslySetInnerHTML={{ __html: article.content }}
+            />
 
             {/* 底部导航 */}
             <div className="mt-12 pt-6 border-t border-gray-100 flex justify-between items-center">
