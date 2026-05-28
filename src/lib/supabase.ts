@@ -1,13 +1,18 @@
-import { createClient } from "@supabase/supabase-js";
+// Local filesystem storage — no Supabase dependency
+// API routes read/write JSON files in src/data/
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+const noop = {
+  storage: { from: () => noop, upload: () => ({ error: null }), getPublicUrl: () => ({ publicUrl: "" }) },
+  from: () => noop,
+  select: () => noop,
+  order: () => noop,
+  insert: () => noop,
+  update: () => noop,
+  delete: () => noop,
+  eq: () => noop,
+  single: () => ({ data: null, error: null }),
+  upsert: () => ({ error: null }),
+} as any;
 
-// Public client (for client-side reads)
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
-// Admin client (for API routes, uses service_role key)
-export const supabaseAdmin = supabaseServiceKey
-  ? createClient(supabaseUrl, supabaseServiceKey)
-  : supabase;
+export const supabase = noop;
+export const supabaseAdmin = noop;
