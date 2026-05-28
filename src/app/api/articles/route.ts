@@ -1,9 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getArticles, setArticles } from "@/lib/kv-store";
+import fs from "fs";
+import path from "path";
+
+function readArticles(): any[] {
+  const dataPath = path.join(process.cwd(), "src/data/articles.json");
+  try {
+    return JSON.parse(fs.readFileSync(dataPath, "utf-8"));
+  } catch {
+    return [];
+  }
+}
 
 export async function GET() {
   try {
-    const articles = await getArticles();
+    const articles = readArticles();
     return NextResponse.json(articles);
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });
@@ -23,9 +33,10 @@ export async function POST(req: NextRequest) {
       cover: body.cover || "",
       published: body.published !== false,
     };
-    const articles = await getArticles();
+    const articles = readArticles();
     articles.unshift(article);
-    await setArticles(articles);
+    const dataPath = path.join(process.cwd(), "src/data/articles.json");
+    fs.writeFileSync(dataPath, JSON.stringify(articles, null, 2), "utf-8");
     return NextResponse.json({ ok: true, article });
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });

@@ -1,22 +1,20 @@
-import { kv } from "@vercel/kv";
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
-async function ensureSeeded() {
-  const exists = await kv.exists("settings");
-  if (!exists) {
-    const dataPath = path.join(process.cwd(), "src/data/settings.json");
-    const settings = JSON.parse(fs.readFileSync(dataPath, "utf-8"));
-    await kv.set("settings", settings);
+function readSettings(): any {
+  const dataPath = path.join(process.cwd(), "src/data/settings.json");
+  try {
+    return JSON.parse(fs.readFileSync(dataPath, "utf-8"));
+  } catch {
+    return {};
   }
 }
 
 export async function GET() {
   try {
-    await ensureSeeded();
-    const settings = await kv.get("settings");
-    return NextResponse.json(settings || {});
+    const settings = readSettings();
+    return NextResponse.json(settings);
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });
   }
@@ -25,7 +23,8 @@ export async function GET() {
 export async function PUT(req: NextRequest) {
   try {
     const body = await req.json();
-    await kv.set("settings", body);
+    const dataPath = path.join(process.cwd(), "src/data/settings.json");
+    fs.writeFileSync(dataPath, JSON.stringify(body, null, 2), "utf-8");
     return NextResponse.json({ ok: true });
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });
