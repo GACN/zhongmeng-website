@@ -1,20 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
-
-const DATA_PATH = path.join(process.cwd(), "src/data/articles.json");
-
-function readArticles() {
-  return JSON.parse(fs.readFileSync(DATA_PATH, "utf-8"));
-}
-
-function writeArticles(articles: any[]) {
-  fs.writeFileSync(DATA_PATH, JSON.stringify(articles, null, 2), "utf-8");
-}
+import { getArticles, setArticles } from "@/lib/kv-store";
 
 export async function GET() {
   try {
-    const articles = readArticles();
+    const articles = await getArticles();
     return NextResponse.json(articles);
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });
@@ -34,9 +23,9 @@ export async function POST(req: NextRequest) {
       cover: body.cover || "",
       published: body.published !== false,
     };
-    const articles = readArticles();
+    const articles = await getArticles();
     articles.unshift(article);
-    writeArticles(articles);
+    await setArticles(articles);
     return NextResponse.json({ ok: true, article });
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });
