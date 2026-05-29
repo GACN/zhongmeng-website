@@ -9,18 +9,31 @@ import type { NavLink } from '@/lib/constants';
 
 const NAV: NavLink[] = [
   { tKey: "首页", href: "/" },
-  { tKey: "业务板块", children: [
-    { tKey: "人才安居", href: "/talent-housing" },
-    { tKey: "产业发展", href: "/industry-park" },
-    { tKey: "资产盘活", href: "/asset-revitalization" },
-    { tKey: "未来布局", href: "/future-layout" },
-  ]},
   { tKey: "关于我们", children: [
     { tKey: "集团概况", href: "/about" },
+    { tKey: "发展历程", href: "/history" },
     { tKey: "荣誉资质", href: "/about#honors" },
+    { tKey: "党建风采", href: "/party" },
   ]},
-  { tKey: "在营项目", href: "/projects" },
-  { tKey: "新闻动态", href: "/news" },
+  { tKey: "家友服务", children: [
+    { tKey: "服务项目", href: "/talent-housing" },
+    { tKey: "智慧系统", href: "/smart-system" },
+  ]},
+  { tKey: "项目信息", children: [
+    { tKey: "项目案例", href: "/projects" },
+    { tKey: "业务板块", href: "/business" },
+  ]},
+  { tKey: "房源展示", children: [
+    { tKey: "产品中心", href: "/projects" },
+  ]},
+  { tKey: "中梦资讯", children: [
+    { tKey: "新闻中心", href: "/news" },
+    { tKey: "明明很爱你", href: "/mingming-love" },
+  ]},
+  { tKey: "联系我们", children: [
+    { tKey: "联系我们", href: "/contact" },
+    { tKey: "人才招聘", href: "/jobs" },
+  ]},
 ];
 
 interface Props { isOpen: boolean; onClose: () => void; }

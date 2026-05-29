@@ -1,5 +1,37 @@
 [
   {
+    "id": "zhongmeng-site-refresh-20260529",
+    "title": "中梦官网焕新上线：菜单与栏目全面对齐官网模板",
+    "date": "2026-05-29",
+    "category": "集团新闻",
+    "summary": "参考官网模板优化导航结构，统一关于我们、家友服务、项目信息、房源展示、中梦资讯与联系我们六大入口。",
+    "content": "<section style=\"padding:0;margin:0;font-size:15px;color:#3f3f3f;line-height:1.8;text-align:justify;\">\n<p style=\"margin-bottom:20px;\">昨晚，中梦官网进行了新一轮栏目梳理与导航更新。我们参考集团官网模板的结构，把原来分散的入口重新收束为更清晰的六大主菜单：<strong>关于我们、家友服务、项目信息、房源展示、中梦资讯、联系我们</strong>。</p>\n<p style=\"margin-bottom:20px;\">这次调整不是单纯“换个排版”，而是让首页、移动端和内容页的浏览路径更统一。用户可以更快找到集团概况、发展历程、服务项目、项目案例、新闻动态和招聘联系方式，减少跳转成本，也让中梦的品牌表达更像一个完整的官网体系。</p>\n<h2 style=\"font-size:18px;font-weight:bold;color:#1a1a1a;border-left:4px solid #C79943;padding-left:12px;margin:30px 0 15px 0;\">菜单更清楚，内容更好找</h2>\n<p style=\"margin-bottom:20px;\">新菜单把“关于我们”作为品牌认知入口，把“家友服务”作为服务能力入口，把“项目信息”和“房源展示”作为业务展示入口，再把“中梦资讯”作为动态内容入口，最后用“联系我们”承接咨询、招聘与反馈。</p>\n<p style=\"margin-bottom:20px;\">对外看，这是一次视觉和结构上的更新；对内看，这是把中梦已有的业务、项目、公益与互动内容重新整理成一套更容易传播、也更方便持续维护的官网骨架。</p>\n<p style=\"margin-bottom:20px;\">后续我们会继续补充栏目内容，让每一个入口都能真正对应到具体页面、具体案例和具体服务，保持“看得懂、找得到、点得开、能联系”的使用体验。</p>\n</section>",
+    "author": "郭大虾",
+    "tags": [
+      "官网更新",
+      "导航优化",
+      "品牌形象",
+      "中梦资讯"
+    ],
+    "published": true
+  },
+  {
+    "id": "zhongmeng-news-guide-20260529",
+    "title": "中梦资讯栏目说明：六大入口与内容更新节奏",
+    "date": "2026-05-29",
+    "category": "中梦资讯",
+    "summary": "官网新增更清晰的栏目入口后，中梦资讯将持续发布项目动态、集团新闻、公益故事与人才服务信息。",
+    "content": "<section style=\"padding:0;margin:0;font-size:15px;color:#3f3f3f;line-height:1.8;text-align:justify;\">\n<p style=\"margin-bottom:20px;\">为了让官网内容更容易被理解和持续更新，中梦把资讯内容进一步分成几类：<strong>集团新闻、项目动态、走进中梦、明明很爱你、互动交流</strong>等。不同内容有不同侧重点，但共同目标只有一个：把中梦正在做什么、为什么这么做、接下来还要怎么做，说清楚。</p>\n<p style=\"margin-bottom:20px;\">集团新闻主要发布品牌升级、重要荣誉和重大节点；项目动态聚焦人才公寓、产业园区和在营项目；走进中梦侧重品牌故事、发展历程和组织建设；明明很爱你记录公益行动；互动交流则保留招聘、反馈和联系通道。</p>\n<h2 style=\"font-size:18px;font-weight:bold;color:#1a1a1a;border-left:4px solid #C79943;padding-left:12px;margin:30px 0 15px 0;\">内容更新的三个原则</h2>\n<p style=\"margin-bottom:20px;\">第一，标题尽量明确，让用户一眼知道这篇文章讲什么；第二，内容尽量真实，少空话，多事实和节点；第三，图文尽量统一，保证网站整体风格更像一个长期运营的官网，而不是临时拼出来的展示页。</p>\n<p style=\"margin-bottom:20px;\">接下来，中梦资讯会继续围绕官网更新、项目进展、公益活动和人才服务做稳定发布，也欢迎大家通过“联系我们”入口留下建议、问题和合作意向。</p>\n</section>",
+    "author": "郭大虾",
+    "tags": [
+      "中梦资讯",
+      "内容说明",
+      "项目动态",
+      "互动交流"
+    ],
+    "published": true
+  },
+  {
     "id": "mingming-love-elderly-2026",
     "title": "暖心慰问·情系夕阳｜中梦「明明很爱你」走进养老院",
     "date": "2026-05-28",
